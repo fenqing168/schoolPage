@@ -74,7 +74,7 @@
         }
     </style>
 	
-<style style="text/css">
+<style>
 .navbar-banner {
     margin-top: 50px;
     background: url("img/homepage-bg.png");
@@ -83,22 +83,9 @@
 }
 </style>
 
-
-	
-    
 </head>
 
 <body>
-	
-        
-        
-            
-
-
-
-
-
-
 <nav class="navbar navbar-default navbar-fixed-top header">
     <div class="container">
         <div class="navbar-header">
@@ -157,12 +144,6 @@
         </div>
     </div>
 </nav>
-
-        
-	
-
-
-
 	
 <div class="navbar-banner layout-no-margin-top">
     <div class="banner-container">
@@ -175,27 +156,6 @@
                     <div style="margin-top:24px;">
                         <a id="course-btn" class="course-btn btn btn-lg" href="courses/index.html">进入课程</a>
                     </div>
-                </div>
-                
-                <div class="col-md-5">
-                    
-                    <form action="/quickregister" method="post">
-                        <div class="form-group">
-                            <input class="form-control" name="name" id="name" type="text" placeholder="昵称">
-                            <div class="help-block text-left"></div>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" name="email" id="email" type="email" placeholder="邮箱">
-                            <div class="help-block text-left"></div>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" name="password" id="password" type="password" placeholder="密码">
-                            <div class="help-block text-left"></div>
-                        </div>
-                        <button class="btn register" type="submit">加入实验楼</button>
-                        <p class="tip">点击"加入实验楼"，表示您已经同意我们的<a href="privacy/index.html" target="_blank"> 隐私条款</a></P>
-                    </form>
-                    
                 </div>
                 
             </div>
@@ -626,11 +586,6 @@
         </div>
     </a>
 </div>
-
-        
-            
-
-
 <div class="col-md-3 col-sm-6  course">
     <a class="course-box" href="courses/show.html">
         <div class="sign-box">
@@ -766,7 +721,7 @@
                                         <input type="text" name="captcha_v" class="form-control" placeholder="请输入验证码">
                                     </div>
                                 </div>
-                                <img class="verify-code" src="" source="https://www.shiyanlou.com/captcha.gif">
+                                <img class="verify-code" src="" source="http://localhost:80/util/loginCode">
                             </div>
                             <div class="form-group remember-login">
                                 <input name="remember" type="checkbox" value="y"> 下次自动登录
@@ -789,7 +744,7 @@
                         </form>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="signup-form">
-                        <form action="/register" method="post">
+                        <form action="/user/register" method="post">
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
@@ -812,7 +767,7 @@
                                         <input type="text" name="captcha_v" class="form-control" placeholder="请输入验证码">
                                     </div>
                                 </div>
-                                <img class="verify-code" src="" source="https://www.shiyanlou.com/captcha.gif">
+                                <img class="verify-code" src="" source="http://localhost:80/util/loginCode">
                             </div>
                             <div class="form-group">
                                 <input class="btn btn-primary" name="submit" type="submit" value="注册">
@@ -885,6 +840,8 @@
     data-post-url="/registercheck"
 ></div>
 
+<script src="./static/common/common.js"></script>
+<script src="./static/layui/layui.js"></script>
 <script src="app/dest/frontend/index.js?=2016121272249"></script>
 
 
@@ -956,6 +913,7 @@
         <span>Copyright @2013-2016 实验楼在线教育</span>
         <span class="ver-line"> | </span>
         <a href="http://www.miibeian.gov.cn/" target="_blank">蜀ICP备13019762号</a>
+
         <script type="text/javascript">
             var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
             document.write(unescape("%3Cspan id='cnzz_stat_icon_5902315'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D5902315' type='text/javascript'%3E%3C/script%3E"));
