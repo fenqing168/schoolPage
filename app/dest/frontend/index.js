@@ -1796,7 +1796,18 @@
                                     password: this.$signinForm.find('[name="password"]').val(),
                                     captcha_v: this.$signinForm.find('[name="captcha_v"]').val(),
                                     remember: r.is(":checked") ? r.val() : ""
-                                }, e.login || this.errMsg("请输入邮箱"), e.password || this.errMsg("请输入密码"), t.next = 7, this.ajax(n, e);
+                                }, e.login || this.errMsg("请输入邮箱"), e.password || this.errMsg("请输入密码"), t.next = 7, this.ajax(n, e, function (data) {
+                                    if(data.code === 0){
+                                        localStorage.setItem('token', data.data);
+                                        layer.alert('登陆成功！', {icon:6, end:function () {
+                                                localStorage.setItem('needLoginCode', true);
+                                            }});
+                                    }else{
+                                        layer.alert(data.msg, {icon:5});
+                                    }
+                                }, function () {
+                                    layer.alert("系统异常，请联系管理员！", {icon:5});
+                                });
                             case 7:
                             case"end":
                                 return t.stop()
